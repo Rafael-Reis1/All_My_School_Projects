@@ -101,8 +101,8 @@ namespace Trabalho_Final_Estrutura_de_dados_2024._1_Modulo1
 
         private static void ShowingPerformance(TimeSpan timeSpanAbb, TimeSpan timeSpanAvl)
         {
-            MessageBox.Show($"Tempo de execução da Arv. ABB: {timeSpanAbb.TotalNanoseconds} Nanossegundos\n" +
-                                 $"Tempo de execução da Arv. AVL: {timeSpanAvl.TotalNanoseconds} Nanossegundos\n\n",
+            MessageBox.Show($"Tempo de execuÃ§Ã£o da Arv. ABB: {timeSpanAbb.TotalNanoseconds} Nanossegundos\n" +
+                                 $"Tempo de execuÃ§Ã£o da Arv. AVL: {timeSpanAvl.TotalNanoseconds} Nanossegundos\n\n",
                                  "Arvore de pesquisa",
                                  MessageBoxButtons.OK);
         }
@@ -128,8 +128,7 @@ namespace Trabalho_Final_Estrutura_de_dados_2024._1_Modulo1
         private static TimeSpan SearchingABBTree()
         {
             DateTime time1 = DateTime.Now;
-            int valueToFind = Convert.ToInt32(tbID.Text);
-            bst.Find(valueToFind);
+            bst.Find(Convert.ToInt32(tbID.Text));
             DateTime time2 = DateTime.Now;
             TimeSpan timeSpanAbb = time2 - time1;
             return timeSpanAbb;
@@ -181,9 +180,9 @@ namespace Trabalho_Final_Estrutura_de_dados_2024._1_Modulo1
 
         private static void ShowingTreeAndPerformance(int balanceFactorAvl, int balanceFactorAbb)
         {
-            MessageBox.Show($"FB nó raiz Arv. ABB: {balanceFactorAbb} \n" +
-                            $"FB nó raiz Arv. AVL: {balanceFactorAvl} \n" +
-                            $"Numero de rotações Arv. AVL: {numRotation} \n\n" +
+            MessageBox.Show($"FB nÃ³ raiz Arv. ABB: {balanceFactorAbb} \n" +
+                            $"FB nÃ³ raiz Arv. AVL: {balanceFactorAvl} \n" +
+                            $"Numero de rotaÃ§Ãµes Arv. AVL: {numRotation} \n\n" +
                             CadBooks.arvore,
                             "Arvore de pesquisa",
                             MessageBoxButtons.OK);
