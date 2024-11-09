@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,body {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    place-items: center;
+    background: linear-gradient(to right, #99004d 0%, #ff0080 100%);
+}
+
+.container {
+    background: #fff;
+    max-width: 21.875rem;
+    width: 100%;
+    padding: 1.5625rem 1.875rem;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+}
+
+.container form .title {
+    font-size: 1.875rem;
+    font-weight: 600;
+    margin: 1.25rem 0 0.625rem 0;
+    position: relative;
+}
+
+.container form .title::before {
+    content: '';
+    position: absolute;
+    height: 0.25rem;
+    width: 2.0625rem;
+    bottom: 0.1875rem;
+    left: 0;
+    border-radius: 5px;
+    background: linear-gradient(to right, #99004d 0%, #ff0080 100%);
+}
+
+.container form .input-box {
+    width: 100%;
+    height: 2.8125rem;
+    margin-top: 1.5625rem;
+    position: relative;
+}
+
+.container form .input-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    border: none;
+}
+
+.container form .underline:before {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 100%;
+    background: #ccc;
+    left: 0;
+    bottom: 0;
+}
+
+.container form .underline:after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(to right, #99004d 0%, #ff0080 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.3s ease;
+}
+
+.container form .input-box input:focus ~ .underline:after 
+.container form .input-box input:valid ~ .underline:after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.container form .button {
+    margin: 2.5rem 0 1.25rem 0;
+}
+
+.container form .input-box input[type="submit"] {
+    font-size: 1.0625rem;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    background: linear-gradient(to right, #99004d 0%, #ff0080 100%);
+    transition: all 0.3s ease;
+}
+
+.container form .input-box input[type="submit"]:hover {
+    letter-spacing: 1px;
+    background: linear-gradient(to left, #99004d 0%, #ff0080 100%);
+}
+
+.container .option {
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.container .twitter a,
+.container .facebook a {
+    display: block;
+    width: 100%;
+    height: 2.8125rem;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    padding-left: 1.25rem;
+    color: #fff;
+    line-height: 2.8125rem;
+    border-radius: 5px;
+}
+
+
+.container .twitter i,
+.container .facebook i {
+    padding-right: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.container .twitter a {
+    margin: 1.25rem 0 0.9375rem 0;
+    background: linear-gradient(to left, #00acee 0%, #1abeff 100%);
+}
+
+.container .twitter a:hover {
+    background: linear-gradient(to right, #00acee 0%, #1abeff 100%);
+}
+
+.container .facebook a {
+    margin: 1.25rem 0 3.125rem 0;
+    background: linear-gradient(to left, #3b5998 0%, #476bb8 100%);
+}
+
+.container .facebook a:hover {
+    background: linear-gradient(to right, #3b5998 0%, #476bb8 100%);
+}
