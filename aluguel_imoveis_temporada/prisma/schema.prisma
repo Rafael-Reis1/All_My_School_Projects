@@ -1,0 +1,54 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model ImovelTemporada {
+  id_imovel String @id @default(uuid())
+  cep String
+  logradouro String
+  numero Int
+  bairro String
+  localidade String
+  estado String
+  uf String
+  preco Float
+  proprietario String
+  disponivel Boolean
+  @@map("imoveis")
+  ReservaTemporada ReservaTemporada[]
+  usuarios Usuario @relation(fields: [proprietario], references: [id_usuario])
+}
+
+model ReservaTemporada {
+  id_reserva String @id @default(uuid())
+  id_imovel String
+  cliente String
+  totalDias String
+  totalPreco Float
+  data_entrada DateTime
+  data_saida DateTime
+  @@map("reservas")
+  imoveis ImovelTemporada @relation(fields: [id_imovel], references: [id_imovel])
+  usuarios Usuario @relation(fields: [cliente], references: [id_usuario])
+}
+
+model Usuario {
+  id_usuario String @id @default(uuid())
+  email String @unique
+  senha String
+  nome String
+  @@map("usuarios")
+  ImovelTemporada ImovelTemporada[]
+  ReservaTemporada ReservaTemporada[]
+}
